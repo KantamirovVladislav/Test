@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_centerHorizontal="true">
-                 <!--Направляюшие-->
+    <!--Направляюшие-->
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideLineVertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.5"/>
+        app:layout_constraintGuide_percent="0.5" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideLineHorizontal"
@@ -20,15 +20,15 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.2" />
 
-               <!--Логотип-->
+    <!--Логотип-->
     <LinearLayout
+        android:id="@+id/linearLayoutLogo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/linearLayoutLogo"
         android:gravity="center"
-        app:layout_constraintStart_toStartOf="@id/guideLineVertical"
-        app:layout_constraintEnd_toEndOf="@id/guideLineVertical"
         app:layout_constraintBottom_toTopOf="@id/guideLineHorizontal"
+        app:layout_constraintEnd_toEndOf="@id/guideLineVertical"
+        app:layout_constraintStart_toStartOf="@id/guideLineVertical"
         app:layout_constraintTop_toTopOf="@id/guideLineHorizontal">
 
         <ImageView
@@ -45,14 +45,14 @@
             android:textSize="35sp" />
     </LinearLayout>
 
-        <!--Логин аккаунта-->
+    <!--Логин аккаунта-->
     <LinearLayout
+        android:id="@+id/linearLayoutAccount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/linearLayoutAccount"
-        app:layout_constraintTop_toBottomOf="@id/linearLayoutLogo"
         android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp">
+        android:layout_marginEnd="30dp"
+        app:layout_constraintTop_toBottomOf="@id/linearLayoutLogo">
 
         <ImageView
             android:id="@+id/textViewAccountFace"
@@ -67,16 +67,16 @@
             android:hint="kafomin" />
     </LinearLayout>
 
-              <!--Пароль-->
+    <!--Пароль-->
     <LinearLayout
         android:id="@+id/linearLayoutPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/linearLayoutAccount"
-        app:layout_constraintStart_toStartOf="@id/linearLayoutAccount"
         android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="30dp"
-        android:layout_marginTop="10dp">
+        app:layout_constraintStart_toStartOf="@id/linearLayoutAccount"
+        app:layout_constraintTop_toBottomOf="@id/linearLayoutAccount">
 
         <ImageView
             android:id="@+id/imageViewPassword"
@@ -88,8 +88,8 @@
             android:id="@+id/editTextPassword"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:inputType="textPassword"
-            android:hint="*******"/>
+            android:hint="*******"
+            android:inputType="textPassword" />
 
     </LinearLayout>
 
