@@ -64,7 +64,7 @@
             android:layout_marginStart="5dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="kafomin" />
+            android:hint="Username" />
     </LinearLayout>
 
     <!--Пароль-->
@@ -90,7 +90,7 @@
             android:layout_height="match_parent"
             android:inputType="textPassword"
             android:layout_marginStart="5dp"
-            android:hint="*******"/>
+            android:hint="Password"/>
 
     </LinearLayout>
 
@@ -111,11 +111,12 @@
             app:srcCompat="@drawable/img3"/>
 
         <EditText
+            android:id="@+id/editTextEmail"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="5dp"
             android:inputType="textEmailAddress"
-            android:hint="kafomin@yandex.ru"/>
+            android:hint="Email"/>
     </LinearLayout>
     <!--Repeat Password-->
     <LinearLayout
@@ -134,11 +135,12 @@
             app:srcCompat="@drawable/img2" />
 
         <EditText
+            android:id="@+id/editTextRepeatPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:inputType="textPassword"
-            android:hint="*******"/>
+            android:hint="Repeat password"/>
 
     </LinearLayout>
 
@@ -156,7 +158,8 @@
         app:cornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayoutRepeatPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutRepeatPassword"
+        android:onClick="clickCreateAccount"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
