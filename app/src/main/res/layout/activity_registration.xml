@@ -60,7 +60,7 @@
             app:srcCompat="@drawable/img1" />
 
         <EditText
-            android:id="@+id/editTextAccount"
+            android:id="@+id/editTextAccountRegistration"
             android:layout_marginStart="5dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -159,6 +159,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayoutRepeatPassword" />
+
+    <TextView
+        android:id="@+id/textViewBackRegistration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Back"
+        android:textSize="16sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonReg" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

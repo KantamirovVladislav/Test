@@ -62,7 +62,7 @@
             app:srcCompat="@drawable/img1" />
 
         <EditText
-            android:id="@+id/editTextAccount"
+            android:id="@+id/editTextAccountAuthorization"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="Username" />
