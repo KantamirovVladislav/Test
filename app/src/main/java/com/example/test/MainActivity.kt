@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
         name = findViewById(R.id.editTextAccount)
         signNow = findViewById(R.id.textView3)
 
+
         signIn.setOnClickListener {
             val intent: Intent = Intent(this@MainActivity, hello::class.java)
             intent.putExtra("userName", name.text.toString())
