@@ -1,3 +1,24 @@
 <resources>
-    <string name="app_name">Test</string>
+    <string name="app_name" translatable="false">Test</string>
+    <string name="soccerskills" translatable="false">SoccerSkills</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="remember_me">Remember me?</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="sign_in">Sign In</string>
+    <string name="don_t_have_account">Don\'t have account?</string>
+    <string name="signup_now">SIGNUP NOW</string>
+    <string name="email">Email</string>
+    <string name="repeat_password">Repeat password</string>
+    <string name="create">Create</string>
+    <string name="back">Back</string>
+    <string name="Hello">Hello</string>
+    <string name="login_not_fill">Login field is not filled</string>
+    <string name="login_less_5">The account login field cannot be less than 5 characters</string>
+    <string name="email_not_fill">The enail address field is not filled in</string>
+    <string name="invalid_email_address">Invalid email address format</string>
+    <string name="password_not_fill">The password field is not entered</string>
+    <string name="password_less_8">The password is less than 6 characters</string>
+    <string name="repestPassword_not_fill">The password field (repeated) is not entered</string>
+    <string name="password_not_match">Passwords don\'t match</string>
 </resources>

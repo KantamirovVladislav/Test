@@ -12,6 +12,6 @@ class hello : AppCompatActivity() {
 
         name = findViewById(R.id.textViewName)
 
-        name.text = "Приветствую, " + intent.getStringExtra("userName") + "!"
+        name.text = "${getString(R.string.Hello)}, " + intent.getStringExtra("userName") + "!"
     }
 }

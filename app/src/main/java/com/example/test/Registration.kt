@@ -7,7 +7,6 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import java.util.regex.Pattern
 
 class Registration : AppCompatActivity() {
 
@@ -38,21 +37,21 @@ class Registration : AppCompatActivity() {
             val repeatPasswordValid: String = repeatPassword.text.toString().trim()
 
             if (userNameValid.isEmpty())
-                Toast.makeText(applicationContext, "Поле логина не заполнено" , Toast.LENGTH_SHORT).show()
+                Toast.makeText(applicationContext, getString(R.string.login_not_fill) , Toast.LENGTH_SHORT).show()
             else if (userNameValid.length < 5)
-                Toast.makeText(applicationContext, "Поле логина аккаунта не может быть меньше 5 символов", Toast.LENGTH_SHORT).show()
+                Toast.makeText(applicationContext, getString(R.string.login_less_5), Toast.LENGTH_SHORT).show()
             else if (emailValid.isEmpty())
-                Toast.makeText(applicationContext, "Поле почтового адреса не заполнено", Toast.LENGTH_SHORT).show()
+                Toast.makeText(applicationContext, getString(R.string.email_not_fill), Toast.LENGTH_SHORT).show()
             else if (!android.util.Patterns.EMAIL_ADDRESS.matcher(emailValid).matches())
-                Toast.makeText(applicationContext,  "Неверный формат почтового адреса", Toast.LENGTH_SHORT).show()
+                Toast.makeText(applicationContext,  getString(R.string.invalid_email_address), Toast.LENGTH_SHORT).show()
             else if (passwordValid.isEmpty())
-                Toast.makeText(applicationContext, "Поле пароля не введено", Toast.LENGTH_SHORT).show()
+                Toast.makeText(applicationContext, getString(R.string.password_not_fill), Toast.LENGTH_SHORT).show()
             else if (passwordValid.length < 8)
-                Toast.makeText(applicationContext,"Пароль меньше 6 символов", Toast.LENGTH_SHORT).show()
+                Toast.makeText(applicationContext,getString(R.string.password_less_8), Toast.LENGTH_SHORT).show()
             else if (repeatPasswordValid.isEmpty())
-                Toast.makeText(applicationContext, "Поле пароля (повторное) не введено", Toast.LENGTH_SHORT).show()
+                Toast.makeText(applicationContext, getString(R.string.repestPassword_not_fill), Toast.LENGTH_SHORT).show()
             else if (passwordValid != repeatPasswordValid)
-                Toast.makeText(applicationContext, "Пароли не совпадают", Toast.LENGTH_SHORT).show()
+                Toast.makeText(applicationContext, getString(R.string.password_not_match), Toast.LENGTH_SHORT).show()
             else {
                 val intent: Intent = Intent(this, hello::class.java)
                 intent.putExtra("userName", userName.text.toString())

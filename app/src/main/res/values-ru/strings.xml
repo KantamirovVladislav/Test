@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="username">Логин</string>
+    <string name="password">Пароль</string>
+    <string name="remember_me">Запомнить меня?</string>
+    <string name="forgot_password">Забыли пароль?</string>
+    <string name="sign_in">Войти</string>
+    <string name="don_t_have_account">Не имеете аккаунта?</string>
+    <string name="signup_now">Зарегистрироваться</string>
+    <string name="email">Почтовый адрес</string>
+    <string name="repeat_password">Повторите пароль</string>
+    <string name="create">Создать</string>
+    <string name="back">Назад</string>
+    <string name="Hello">Приветствую</string>
+    <string name="login_not_fill">Поле логина не заполнено</string>
+    <string name="login_less_5">Поле логина аккаунта не может быть меньше 5 символов</string>
+    <string name="email_not_fill">Поле почтового адреса не заполнено</string>
+    <string name="invalid_email_address">Неверный формат почтового адреса</string>
+    <string name="password_not_fill">Поле пароля не введено</string>
+    <string name="password_less_8">Пароль меньше 8 символов</string>
+    <string name="repestPassword_not_fill">Поле пароля (повторное) не введено</string>
+    <string name="password_not_match">Пароли не совпадают</string>
+</resources>

@@ -42,7 +42,7 @@
             android:id="@+id/textViewLogo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="SoccerSkills"
+            android:text="@string/soccerskills"
             android:textSize="35sp" />
     </LinearLayout>
 
@@ -65,7 +65,7 @@
             android:id="@+id/editTextAccountAuthorization"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="Username" />
+            android:hint="@string/username" />
     </LinearLayout>
 
     <!--Пароль-->
@@ -89,7 +89,7 @@
             android:id="@+id/editTextPassword"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="Password"
+            android:hint="@string/password"
             android:inputType="textPassword" />
 
     </LinearLayout>
@@ -112,7 +112,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Remember me?"
+            android:text="@string/remember_me"
             android:textSize="15sp" />
 
     </LinearLayout>
@@ -122,7 +122,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:text="Forgot password?"
+        android:text="@string/forgot_password"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -136,7 +136,7 @@
         android:layout_marginTop="100dp"
         android:layout_marginEnd="120dp"
         android:backgroundTint="@android:color/holo_green_dark"
-        android:text="Sign In"
+        android:text="@string/sign_in"
         android:textSize="16sp"
         app:cornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -148,7 +148,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="Don't have account?"
+        android:text="@string/don_t_have_account"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -159,7 +159,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="SIGNUP NOW"
+        android:text="@string/signup_now"
         android:textSize="16sp"
         android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
