@@ -7,6 +7,8 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.test.manager.DBManager
+import com.example.test.manager.User
 
 class Registration : AppCompatActivity() {
 
@@ -27,6 +29,8 @@ class Registration : AppCompatActivity() {
         repeatPassword = findViewById(R.id.editTextRepeatPassword)
         regBtn = findViewById(R.id.buttonReg)
         backTextView = findViewById(R.id.textViewBackRegistration)
+
+        val dbManager = DBManager(this)
 
 
         regBtn.setOnClickListener{
@@ -52,7 +56,12 @@ class Registration : AppCompatActivity() {
                 Toast.makeText(applicationContext, getString(R.string.repestPassword_not_fill), Toast.LENGTH_SHORT).show()
             else if (passwordValid != repeatPasswordValid)
                 Toast.makeText(applicationContext, getString(R.string.password_not_match), Toast.LENGTH_SHORT).show()
+            else if (dbManager.checkUserName(userNameValid))
+                Toast.makeText(applicationContext, "UserName is exist", Toast.LENGTH_SHORT).show()
+            else if (dbManager.checkEmail(emailValid))
+                Toast.makeText(applicationContext, "Email is exist", Toast.LENGTH_SHORT).show()
             else {
+                dbManager.addUser(User(0,userNameValid, emailValid, passwordValid, 0))
                 val intent: Intent = Intent(this, hello::class.java)
                 intent.putExtra("userName", userName.text.toString())
                 startActivity(intent)

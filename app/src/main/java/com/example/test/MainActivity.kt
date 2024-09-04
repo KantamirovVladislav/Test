@@ -3,6 +3,7 @@ package com.example.test
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.View
@@ -10,6 +11,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import com.example.test.manager.DBManager
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,6 +28,7 @@ class MainActivity : AppCompatActivity() {
         name = findViewById(R.id.editTextAccountAuthorization)
         password = findViewById(R.id.editTextPassword)
         signNow = findViewById(R.id.textView3)
+        val dbManager = DBManager(this)
 
         signIn.setOnClickListener {
 
@@ -40,6 +43,8 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(applicationContext, getString(R.string.password_not_fill), Toast.LENGTH_SHORT).show()
             else if (passwordValid.length < 8)
                 Toast.makeText(applicationContext,getString(R.string.password_less_8), Toast.LENGTH_SHORT).show()
+            else if (!dbManager.checkPassword(userNameValid, passwordValid))
+                Toast.makeText(applicationContext,"Invalid username or password", Toast.LENGTH_SHORT).show()
             else{
                 val intent: Intent = Intent(this@MainActivity, hello::class.java)
                 intent.putExtra("userName", name.text.toString())
