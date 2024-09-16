@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity() {
             else if (passwordValid.length < 8)
                 Toast.makeText(applicationContext,getString(R.string.password_less_8), Toast.LENGTH_SHORT).show()
             else if (!dbManager.checkPassword(userNameValid, passwordValid))
-                Toast.makeText(applicationContext,"Invalid username or password", Toast.LENGTH_SHORT).show()
+                Toast.makeText(applicationContext,getString(R.string.invalid_username_or_password), Toast.LENGTH_SHORT).show()
             else{
                 val intent: Intent = Intent(this@MainActivity, hello::class.java)
                 intent.putExtra("userName", name.text.toString())

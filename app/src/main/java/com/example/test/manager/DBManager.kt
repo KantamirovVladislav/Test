@@ -40,7 +40,7 @@ class DBManager (context: Context?): SQLiteOpenHelper(context, DATABASE_NAME, nu
         cv.put("password", user.password)
         cv.put("enter", user.countEnter)
         var rowId: Long = this.writableDatabase.insert("User", null, cv)
-        Log.d(LOG_TAG, "row inserted, ID = $rowId")
+        Log.d(LOG_TAG, "Row inserted, ID = $rowId")
     }
 
     fun clear(){
@@ -79,7 +79,7 @@ class DBManager (context: Context?): SQLiteOpenHelper(context, DATABASE_NAME, nu
                 val whereClause = "$COLUMN_ID = ?"
                 val whereArgs = arrayOf(this[it].index.toString())
                 val rowsUpdated = writableDatabase.update(TABLE_NAME, contentValues, whereClause, whereArgs)
-                Log.d(LOG_TAG, "Password check successful, enter count updated to $updatedEnter for user: ${this[it].userName}")
+                Log.d(LOG_TAG, "Password check successful, enter count will update to $updatedEnter for user: ${this[it].userName}")
                 return rowsUpdated > 0
 
             }

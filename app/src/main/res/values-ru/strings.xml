@@ -20,4 +20,7 @@
     <string name="password_less_8">Пароль меньше 8 символов</string>
     <string name="repestPassword_not_fill">Поле пароля (повторное) не введено</string>
     <string name="password_not_match">Пароли не совпадают</string>
+    <string name="username_exist">Логин уже существует</string>
+    <string name="email_exist">Почта уже существует</string>
+    <string name="invalid_username_or_password">Недействительный логин или пароль</string>
 </resources>

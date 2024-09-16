@@ -17,7 +17,7 @@ class hello : AppCompatActivity() {
         val users = dbManager.readUser()
         var result: String = ""
         users.forEach{
-            user -> result += "${user.userName}- ${user.countEnter} \n"
+            user -> result += "${user.userName} - ${user.countEnter} \n"
         }
         name.text = result;
     }
