@@ -1,6 +1,17 @@
 package com.example.test.manager
 
-data class User(val index: Int,val userName: String,val email: String, val password: String, var countEnter: Int) {
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity
+data class User(
+    @PrimaryKey(autoGenerate = true) val index: Int,
+    @ColumnInfo val userName: String,
+    @ColumnInfo val email: String,
+    @ColumnInfo val password: String,
+    @ColumnInfo var countEnter: Int
+) {
     override fun toString(): String {
         return "$index $userName $email $password $countEnter \n"
     }
