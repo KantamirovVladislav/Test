@@ -3,6 +3,8 @@ package com.example.test
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
+import com.example.test.databinding.ActivityHelloBinding
+import com.example.test.databinding.ActivityRegistrationBinding
 import com.example.test.manager.DBManager
 import com.example.test.manager.DBRoom
 import kotlinx.coroutines.CoroutineScope
@@ -10,12 +12,14 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class hello : AppCompatActivity() {
-    private lateinit var name: TextView
+    private lateinit var binding: ActivityHelloBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_hello)
+        binding = ActivityHelloBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
 
-        name = findViewById(R.id.textViewName)
 
         val dbManager = DBRoom(this)
 
@@ -25,7 +29,7 @@ class hello : AppCompatActivity() {
             users.forEach{
                     user -> result += "${user.userName} - ${user.countEnter} \n"
             }
-            name.text = result;
+            binding.textViewName.text = result;
         }
 
 

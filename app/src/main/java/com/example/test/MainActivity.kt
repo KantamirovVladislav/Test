@@ -21,10 +21,6 @@ import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var name: EditText
-    lateinit var password: EditText
-    lateinit var signNow: TextView
-    lateinit var signIn: Button
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,16 +29,13 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        signIn = findViewById(R.id.buttonSignIn)
-        name = findViewById(R.id.editTextAccountAuthorization)
-        password = findViewById(R.id.editTextPassword)
-        signNow = findViewById(R.id.textView3)
+
         val dbManager = DBRoom(this)
 
-        signIn.setOnClickListener {
+        binding.buttonSignIn.setOnClickListener {
 
-            val userNameValid: String = name.text.toString().trim()
-            val passwordValid: String = password.text.toString().trim()
+            val userNameValid: String = binding.editTextAccountAuthorization.text.toString().trim()
+            val passwordValid: String = binding.editTextPassword.text.toString().trim()
             try {
                 lifecycleScope.launch {
                     if (userNameValid.isEmpty())
@@ -57,7 +50,7 @@ class MainActivity : AppCompatActivity() {
                         Toast.makeText(applicationContext,getString(R.string.invalid_username_or_password), Toast.LENGTH_SHORT).show()
                     else{
                         val intent: Intent = Intent(this@MainActivity, hello::class.java)
-                        intent.putExtra("userName", name.text.toString())
+                        intent.putExtra("userName", binding.editTextAccountAuthorization.text.toString())
                         startActivity(intent)
                     }
                 }
@@ -67,7 +60,7 @@ class MainActivity : AppCompatActivity() {
 
 
         }
-        signNow.setOnClickListener {
+        binding.textView3.setOnClickListener {
             val intent: Intent = Intent(this@MainActivity, Registration::class.java)
             startActivity(intent)
         }

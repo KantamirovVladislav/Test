@@ -8,6 +8,8 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
+import com.example.test.databinding.ActivityMainBinding
+import com.example.test.databinding.ActivityRegistrationBinding
 import com.example.test.manager.DBManager
 import com.example.test.manager.DBRoom
 import com.example.test.manager.User
@@ -20,33 +22,25 @@ import kotlinx.coroutines.withContext
 
 class Registration : AppCompatActivity() {
 
-    private lateinit var userName: EditText
-    private lateinit var email:EditText
-    private lateinit var password: EditText
-    private lateinit var repeatPassword: EditText
-    private lateinit var regBtn: Button
-    private lateinit var backTextView: TextView
-    
+
+    private lateinit var binding: ActivityRegistrationBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_registration)
+        binding = ActivityRegistrationBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
 
-        userName = findViewById(R.id.editTextAccountRegistration)
-        email = findViewById(R.id.editTextEmail)
-        password = findViewById(R.id.editTextPassword)
-        repeatPassword = findViewById(R.id.editTextRepeatPassword)
-        regBtn = findViewById(R.id.buttonReg)
-        backTextView = findViewById(R.id.textViewBackRegistration)
 
         //val dbManager = DBManager(this)
         val dbManager = DBRoom(this)
 
-        regBtn.setOnClickListener{
+        binding.buttonReg.setOnClickListener{
 
-            val userNameValid: String = userName.text.toString().trim()
-            val emailValid: String = email.text.toString().trim()
-            val passwordValid: String = password.text.toString().trim()
-            val repeatPasswordValid: String = repeatPassword.text.toString().trim()
+            val userNameValid: String = binding.editTextAccountRegistration.text.toString().trim()
+            val emailValid: String = binding.editTextEmail.text.toString().trim()
+            val passwordValid: String = binding.editTextPassword.text.toString().trim()
+            val repeatPasswordValid: String = binding.editTextRepeatPassword.text.toString().trim()
 
             try {
                 lifecycleScope.launch {
@@ -83,7 +77,7 @@ class Registration : AppCompatActivity() {
         }
 
 
-        backTextView.setOnClickListener {
+        binding.textViewBackRegistration.setOnClickListener {
             val intent: Intent = Intent(this@Registration,MainActivity::class.java)
             startActivity(intent)
         }
