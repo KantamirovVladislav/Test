@@ -61,6 +61,7 @@ dependencies {
     // optional - Test helpers
     testImplementation("androidx.room:room-testing:$room_version")
 
+
     // optional - Paging 3 Integration
     implementation("androidx.room:room-paging:$room_version")
 

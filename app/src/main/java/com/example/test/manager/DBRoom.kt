@@ -30,6 +30,10 @@ class DBRoom(appContext: Context) {
         }
     }
 
+    suspend fun getMaxEnterUser(): User{
+        return db.getUsers().maxBy { user -> user.countEnter }
+    }
+
     suspend fun checkPassword(userName: String, password: String): Boolean{
         db.getUsers().run {
             indexOfFirst {
@@ -39,7 +43,7 @@ class DBRoom(appContext: Context) {
                     return false
                 Log.d("Room DataBase",this[it].toString())
                 this[it].countEnter++
-                db.updateUser(this[it])
+                db.updateUser(this[it].copy())
 
                 Log.d("Room DataBase", "Password check successful, enter count will update")
                 return true

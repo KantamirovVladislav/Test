@@ -70,7 +70,7 @@ class Registration : AppCompatActivity() {
                         startActivity(intent)
                     }
                 }
-            }catch (ex: Exception){
+            } catch (ex: Exception){
                 Toast.makeText(applicationContext, "${ex.message}", Toast.LENGTH_SHORT).show()
             }
 
